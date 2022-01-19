@@ -20,5 +20,5 @@ SBS게임아카데미에서 진행하는 유니티 기초반에 사용되는 수
     - 전부 직접 제작
 
 ## 실행 파일 다운로드 ##
-- 마지막 업데이트 : ``
-- 링크 : (추가 예정)
+- 마지막 업데이트 : `2022-01-20`
+- 링크 : (v1.0)[https://github.com/cloudysolar/Unity_AvoidGlassBall/releases/tag/1.0]
