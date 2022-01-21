@@ -9,19 +9,19 @@ public class ObstacleManager : MonoBehaviour {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if (transform.position.y <= -5.75f) {
             manager.onPlayerAvoid();
             Destroy(gameObject);
         }
         else {
-            transform.Translate(0f, -0.05f, 0f);
+            transform.Translate(0f, -0.175f, 0f);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player") {
-            Debug.LogWarning("[À¯¸®°ø] À¯¸®°øÀÌ ÇÃ·¹ÀÌ¾î¿Í ºÎ‹HÇû½À´Ï´Ù!");
+            Debug.LogWarning("[ìœ ë¦¬ê³µ] ìœ ë¦¬ê³µì´ í”Œë ˆì´ì–´ì™€ ë¶€ë”«í˜”ìŠµë‹ˆë‹¤!");
             manager.onPlayerHit();
 
             Destroy(gameObject);

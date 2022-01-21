@@ -869,7 +869,7 @@ MonoBehaviour:
   gameOver: {fileID: 2098409260}
   text_MaxScore: {fileID: 2100268905}
   text_NowScore: {fileID: 1732872268}
-  spawnPeriod: 0.35
+  spawnPeriod: 0.45
 --- !u!1 &1187518399
 GameObject:
   m_ObjectHideFlags: 0

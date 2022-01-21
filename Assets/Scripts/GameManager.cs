@@ -44,8 +44,14 @@ public class GameManager : MonoBehaviour {
     private void Update() {
         if (health <= 0) {
             if (health == 0) {
-                Debug.Log("[∞‘¿”∏≈¥œ¿˙] ∞‘¿” ø¿πˆ! «√∑π¿ÃæÓ∞° ∏µÁ ∏Òº˚¿ª ¿“æÓ ∞‘¿”¿Ã ¡æ∑·µ«æ˙Ω¿¥œ¥Ÿ.");
-                Debug.Log("[∞‘¿”∏≈¥œ¿˙] ∏∂¡ˆ∏∑ Ω√¡°¿« ¡°ºˆ¥¬ " + nowScore + "¡°¿‘¥œ¥Ÿ.");
+                Debug.Log("[Í≤åÏûÑÎß§ÎãàÏ†Ä] Í≤åÏûÑ Ïò§Î≤Ñ! ÌîåÎ†àÏù¥Ïñ¥Í∞Ä Î™®Îì† Î™©Ïà®ÏùÑ ÏûÉÏñ¥ Í≤åÏûÑÏù¥ Ï¢ÖÎ£åÎêòÏóàÏäµÎãàÎã§.");
+                Debug.Log("[Í≤åÏûÑÎß§ÎãàÏ†Ä] ÎßàÏßÄÎßâ ÏãúÏ†êÏùò Ï†êÏàòÎäî " + nowScore + "Ï†êÏûÖÎãàÎã§.");
+
+                GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+
+                for (int i = 0; i < obstacles.Length; i++) {
+                    Destroy(obstacles[i]);
+                }
 
                 gameOver.SetActive(true);
                 health--;
@@ -65,7 +71,7 @@ public class GameManager : MonoBehaviour {
 
         nowPerioid += Time.deltaTime;
 
-        text_NowScore.text = nowScore.ToString() + "¡°";
+        text_NowScore.text = nowScore.ToString() + "Ï†ê";
 
         if (nowScore >= maxScore) {
             if (maxScore > 0 && !isNewBest) {
@@ -76,7 +82,7 @@ public class GameManager : MonoBehaviour {
             }
 
             maxScore = nowScore;
-            text_MaxScore.text = "√÷∞Ì " + maxScore.ToString() + "¡°";
+            text_MaxScore.text = "ÏµúÍ≥† " + maxScore.ToString() + "Ï†ê";
         }
     }
 
@@ -87,8 +93,8 @@ public class GameManager : MonoBehaviour {
             text_NowScore.gameObject.SetActive(true);
         }
 
-        text_NowScore.text = nowScore.ToString() + "¡°";
-        text_MaxScore.text = "√÷∞Ì " + maxScore.ToString() + "¡°";
+        text_NowScore.text = nowScore.ToString() + "Ï†ê";
+        text_MaxScore.text = "ÏµúÍ≥† " + maxScore.ToString() + "Ï†ê";
 
         player.GetComponent<SpriteRenderer>().color = Color.white;
 
@@ -111,7 +117,7 @@ public class GameManager : MonoBehaviour {
         }
         else {
             health--;
-            Debug.Log("[∞‘¿”∏≈¥œ¿˙] «√∑π¿ÃæÓ∞° ¿Ø∏Æ∞¯ø° ∏¬æ∆ √º∑¬¿ª 1 ¬˜∞®«’¥œ¥Ÿ. ≥≤¿∫ √º∑¬ : " + health);
+            Debug.Log("[Í≤åÏûÑÎß§ÎãàÏ†Ä] ÌîåÎ†àÏù¥Ïñ¥Í∞Ä Ïú†Î¶¨Í≥µÏóê ÎßûÏïÑ Ï≤¥Î†•ÏùÑ 1 Ï∞®Í∞êÌï©ÎãàÎã§. ÎÇ®ÏùÄ Ï≤¥Î†• : " + health);
 
             for (int i = 2; i >= 0; i--) {
                 Image temp = hearts.transform.GetChild(i).GetComponent<Image>();

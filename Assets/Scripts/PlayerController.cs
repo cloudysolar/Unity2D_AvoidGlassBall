@@ -22,24 +22,12 @@ public class PlayerController : MonoBehaviour {
             return;
         }
         else {
-            if (Input.GetKey(KeyCode.A)) {
-                if (-9.6f <= transform.position.x) {
-                    render.flipX = false;
-                    transform.Translate(-0.1f, 0f, 0f);
-                }
-                else {
-                    transform.position = new Vector3(-9.6f, -3f, 0f);
-                }
+            if (Input.GetKeyDown(KeyCode.A)) {
+                moveLeft();
             }
 
-            if (Input.GetKey(KeyCode.D)) {
-                if (transform.position.x <= 9.4f) {
-                    render.flipX = true;
-                    transform.Translate(0.1f, 0f, 0f);
-                }
-                else {
-                    transform.position = new Vector3(9.4f, -3f, 0f);
-                }
+            if (Input.GetKeyDown(KeyCode.D)) {
+                moveRight();
             }
         }
     }
